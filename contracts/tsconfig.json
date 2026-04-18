@@ -1,0 +1,10 @@
+{
+  "extends": "../tsconfig.base.json",
+  "compilerOptions": {
+    "module": "NodeNext",
+    "moduleResolution": "NodeNext",
+    "types": ["node", "mocha"]
+  },
+  "include": ["hardhat.config.ts", "deploy", "tasks", "test"]
+}
+

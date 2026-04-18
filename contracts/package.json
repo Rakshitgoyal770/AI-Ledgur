@@ -1,0 +1,31 @@
+{
+  "name": "@privacy-ai-ledger/contracts",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "scripts": {
+    "node": "hardhat node",
+    "compile": "hardhat compile",
+    "test": "hardhat test",
+    "deploy:localhost": "hardhat deploy --network localhost",
+    "deploy:sepolia": "hardhat deploy --network sepolia",
+    "lint": "echo contracts lint placeholder"
+  },
+  "dependencies": {
+    "@privacy-ai-ledger/shared": "workspace:*"
+  },
+  "devDependencies": {
+    "@fhevm/hardhat-plugin": "^0.4.2",
+    "@fhevm/solidity": "^0.11.1",
+    "@nomicfoundation/hardhat-chai-matchers": "^2.0.8",
+    "@nomicfoundation/hardhat-ethers": "^3.0.8",
+    "@nomicfoundation/hardhat-network-helpers": "^1.0.12",
+    "@types/mocha": "^10.0.10",
+    "chai": "^4.5.0",
+    "ethers": "^6.13.5",
+    "hardhat": "^2.24.1",
+    "hardhat-deploy": "^0.12.4",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.8.3"
+  }
+}

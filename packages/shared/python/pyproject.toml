@@ -1,0 +1,9 @@
+[project]
+name = "privacy-ai-ledger-shared"
+version = "0.1.0"
+description = "Shared Python types for the Privacy-Preserving AI Ledger monorepo"
+requires-python = ">=3.10"
+
+[tool.setuptools]
+py-modules = []
+

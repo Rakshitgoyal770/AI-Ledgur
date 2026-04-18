@@ -1,0 +1,12 @@
+{
+  "name": "@privacy-ai-ledger/he-service",
+  "private": true,
+  "version": "0.1.0",
+  "scripts": {
+    "dev": "py -3 -m uvicorn app.main:app --app-dir . --host 127.0.0.1 --port 8000",
+    "build": "py -3 -m py_compile app\\main.py app\\schemas.py app\\state.py app\\core\\crypto.py app\\core\\dataset.py app\\core\\model.py",
+    "lint": "py -3 -m py_compile app\\main.py app\\schemas.py app\\state.py app\\core\\crypto.py app\\core\\dataset.py app\\core\\model.py",
+    "test": "py -3 -m py_compile app\\main.py app\\schemas.py app\\state.py app\\core\\crypto.py app\\core\\dataset.py app\\core\\model.py"
+  }
+}
+

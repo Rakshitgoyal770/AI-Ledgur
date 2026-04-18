@@ -1,0 +1,48 @@
+version: "3.9"
+
+services:
+  web:
+    image: node:20-bookworm
+    working_dir: /workspace
+    command: >
+      bash -lc "corepack enable &&
+      pnpm install &&
+      pnpm --dir apps/web dev --host 0.0.0.0 --port 5173"
+    ports:
+      - "5173:5173"
+    env_file:
+      - .env
+    volumes:
+      - .:/workspace
+    depends_on:
+      - he-service
+
+  he-service:
+    build:
+      context: ./services/he-service
+      dockerfile: Dockerfile
+    working_dir: /workspace
+    command: >
+      bash -lc "python -m uvicorn app.main:app --host 0.0.0.0 --port 8000"
+    ports:
+      - "8000:8000"
+    env_file:
+      - .env
+    volumes:
+      - ./services/he-service:/workspace
+      - ./packages/shared/python:/workspace/shared_types
+
+  contracts:
+    image: node:20-bookworm
+    working_dir: /workspace
+    command: >
+      bash -lc "corepack enable &&
+      pnpm install &&
+      pnpm --dir contracts node"
+    ports:
+      - "8545:8545"
+    env_file:
+      - .env
+    volumes:
+      - .:/workspace
+

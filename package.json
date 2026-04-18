@@ -1,0 +1,27 @@
+{
+  "name": "my-privacy-ai-ledger",
+  "private": true,
+  "version": "0.1.0",
+  "packageManager": "pnpm@10.7.0",
+  "scripts": {
+    "dev": "turbo run dev --parallel",
+    "dev:web": "turbo run dev --filter=@privacy-ai-ledger/web",
+    "dev:he": "turbo run dev --filter=@privacy-ai-ledger/he-service",
+    "dev:contracts": "turbo run node --filter=@privacy-ai-ledger/contracts",
+    "build": "turbo run build",
+    "build:web": "turbo run build --filter=@privacy-ai-ledger/web",
+    "build:shared": "turbo run build --filter=@privacy-ai-ledger/shared",
+    "compile:contracts": "turbo run compile --filter=@privacy-ai-ledger/contracts",
+    "lint": "turbo run lint",
+    "lint:web": "turbo run lint --filter=@privacy-ai-ledger/web",
+    "typecheck": "turbo run typecheck",
+    "typecheck:web": "turbo run typecheck --filter=@privacy-ai-ledger/web",
+    "test": "turbo run test",
+    "test:contracts": "turbo run test --filter=@privacy-ai-ledger/contracts",
+    "compose:up": "docker compose up --build",
+    "compose:down": "docker compose down"
+  },
+  "devDependencies": {
+    "turbo": "^2.1.3"
+  }
+}
